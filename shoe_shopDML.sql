@@ -1,6 +1,6 @@
 -- Lista antalet produkter per kategori
-select category.name, count(shoe.categoryId) as numberOfProducts from category
-left join shoe on category.id = shoe.categoryId
+select category.name, count(belongsTo.categoryId) as numberOfProducts from category
+left join belongsTo on categoryId = category.id
 group by category.name;
 
 -- Lista kunderna som har köpt svarta Ecco-sandaler i storlek 38

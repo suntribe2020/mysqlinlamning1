@@ -13,11 +13,9 @@ create table shoe
 size int not null,
 color varchar(20) not null,
 price int not null,
-categoryId int not null,
 created timestamp default current_timestamp,
 lastUpdated timestamp default current_timestamp on update current_timestamp,
-primary key (id),
-foreign key (categoryId) references category(id));
+primary key (id));
 
 create table brand
 (id int not null auto_increment,
@@ -96,26 +94,26 @@ insert into category(name) values ('Indoor');
 insert into category(name) values ('Sandals');
 insert into category(name) values ('Winter');
 
-insert into shoe(size, color, price, categoryId) values
-(35,'Red',399,3);
-insert into shoe(size, color, price, categoryId) values
-(36,'Blue',245,4);
-insert into shoe(size, color, price, categoryId) values
-(37,'Brown',598,1);
-insert into shoe(size, color, price, categoryId) values
-(38,'Black',1045,4);
-insert into shoe(size, color, price, categoryId) values
-(39,'White',899,2);
-insert into shoe(size, color, price, categoryId) values
-(40,'Brown',1995,1);
-insert into shoe(size, color, price, categoryId) values
-(41,'Black',1495,5);
-insert into shoe(size, color, price, categoryId) values
-(42,'Black',679,3);
-insert into shoe(size, color, price, categoryId) values
-(42,'Black',1745,1);
-insert into shoe(size, color, price, categoryId) values
-(43,'Black',849,4);
+insert into shoe(size, color, price) values
+(35,'Red',399);
+insert into shoe(size, color, price) values
+(36,'Blue',245);
+insert into shoe(size, color, price) values
+(37,'Brown',598);
+insert into shoe(size, color, price) values
+(38,'Black',1045);
+insert into shoe(size, color, price) values
+(39,'White',899);
+insert into shoe(size, color, price) values
+(40,'Brown',1995);
+insert into shoe(size, color, price) values
+(41,'Black',1495);
+insert into shoe(size, color, price) values
+(42,'Black',679);
+insert into shoe(size, color, price) values
+(42,'Black',1745);
+insert into shoe(size, color, price) values
+(43,'Black',849);
 
 insert into belongsTo(shoeId, categoryId) values (1,3);
 insert into belongsTo(shoeId, categoryId) values (2,4);
